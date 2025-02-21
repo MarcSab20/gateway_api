@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Service Authorization Management</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Gestion des Autorisations des Services</h1>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Service ID</th>
+                    <th>Status</th>
+                    <th>Instance ID</th>
+                    <th>URL</th>
+                    <th>Autorisation</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="service : ${services}">
+                    <td th:text="${service.serviceId}"></td>
+                    <td>
+                        <span th:class="${service.status == 'UP' ? 'badge bg-success' : 'badge bg-danger'}"
+                              th:text="${service.status}">
+                        </span>
+                    </td>
+                    <td th:text="${service.instanceId}"></td>
+                    <td th:text="${service.url}"></td>
+                    <td>
+                        <span th:class="${service.authorized ? 'badge bg-success' : 'badge bg-danger'}"
+                              th:text="${service.authorized ? 'Autorisé' : 'Bloqué'}">
+                        </span>
+                    </td>
+                    <td>
+                        <form th:action="@{/toggle/{serviceId}(serviceId=${service.serviceId})}" method="POST">
+                            <button type="submit" 
+                                    th:class="${service.authorized ? 'btn btn-danger' : 'btn btn-success'}"
+                                    th:text="${service.authorized ? 'Bloquer' : 'Autoriser'}">
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

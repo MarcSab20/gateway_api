@@ -1,0 +1,6 @@
+/home/marco/Bureau/api_gateway-marco/auth-service/src/main/java/com/marco/authorizationservice/AuthorizationServiceApplication.java
+/home/marco/Bureau/api_gateway-marco/auth-service/src/main/java/com/marco/authorizationservice/config/OpenAPIConfig.java
+/home/marco/Bureau/api_gateway-marco/auth-service/src/main/java/com/marco/authorizationservice/controller/AuthorizationController.java
+/home/marco/Bureau/api_gateway-marco/auth-service/src/main/java/com/marco/authorizationservice/controller/WebController.java
+/home/marco/Bureau/api_gateway-marco/auth-service/src/main/java/com/marco/authorizationservice/model/ServiceInfo.java
+/home/marco/Bureau/api_gateway-marco/auth-service/src/main/java/com/marco/authorizationservice/service/AuthorizationService.java
