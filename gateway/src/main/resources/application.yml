@@ -9,6 +9,11 @@ spring:
       discovery:
         locator:
           enabled: true
+      routes:
+        - id: authorization-service
+          uri: lb://authorization-service
+          predicates:
+            - Path=/api/authorization/**
       httpclient:
         connect-timeout: 60000
         response-timeout: 60s
